@@ -1,0 +1,559 @@
+/* General Resets and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --background: rgb(24,24,24);
+    --second-background: rgb(21,21,21);
+    --primary-color: #ffffff;
+    --accent-color: #ff9b00;
+    --overlay-color: rgba(0, 0, 0, 0.5);
+    --input-background: rgb(229, 229, 229);
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--background);
+    color: var(--primary-color);
+    padding-top: 6em; /* Padding to account for the fixed nav bar */
+}
+
+/* Navigation Styles */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1em 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    z-index: 1000;
+    height: 6em;
+}
+
+.logo {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    font-weight: 800;
+    opacity: 0.8;
+    transition: opacity 0.2s ease-in-out;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 4em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul a {
+    font-size: 1.25em;
+    font-weight: 550;
+    color: var(--primary-color);
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+}
+
+nav ul a:hover {
+    opacity: 1;
+}
+
+.btn {
+    padding: 0.5em 1.5em;
+    color: var(--background);
+    background-color: var(--primary-color);
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 0.5em;
+    font-size: 1em;
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Parallax Sections */
+.parallax {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.parallax-inner{
+    margin-left: 3em;
+    backdrop-filter: blur(9px);
+    padding: 1.25em;
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 0.5em;
+}
+.parallax-1 {
+    background-image: url('./images/parliament.jpeg');
+}
+
+.parallax-2 {
+    background-image: url('./images/seating.jpg');
+}
+
+.parallax-3 {
+    background-image: url('./images/supreme.jpg');
+    background-attachment: fixed;
+    padding-top: 7em; /* Space for the header and some margin */
+    position: relative; /* Allow absolute positioning of header and paragraph */
+}
+
+/* About Us Header and Paragraph */
+.parallax-about {
+    background-image: url('./images/supreme.jpg');
+    padding: 8em 0; /* Increased padding for better spacing */
+}
+
+.about-container {
+    max-width: 800px;
+    width: 90%;
+    background: var(--overlay-color);
+    padding: 2.5em;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    margin: 5em;
+    text-align: left;
+}
+
+.about-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: var(--primary-color);
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5em;
+    margin-bottom: 1.5em;
+}
+
+.about-container p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 1.5em;
+}
+
+/* Main Interface Page Text Overlay with Blur Effect */
+.main-interface-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center text */
+    font-size: 2em;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Background for readability */
+    padding: 1em;
+    border-radius: 10px;
+    z-index: 1; /* Ensure it's above other content */
+    backdrop-filter: blur(5px); /* Apply blur effect */
+    text-align: center;
+    max-width: 90%; /* Responsive width */
+}
+
+/* Contact Screen */
+#contact {
+    background: var(--overlay-color); /* Change to match the overlay color */
+    padding: 2.5em; /* Increase padding for better spacing */
+    border-radius: 10px; /* Match border-radius */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    max-width: 800px; /* Increase max-width */
+    width: 90%; /* Increase width for better responsiveness */
+    margin: 5em auto; /* Adjust margin for consistent spacing */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    text-align: left; /* Ensure text alignment is consistent */
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.input-box label {
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+
+.input-box input,
+.input-box textarea {
+    padding: 0.75em 1em;
+    font-size: 1em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: var(--input-background);
+    color: #333;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.input-box input:focus,
+.input-box textarea:focus {
+    background-color: #fff;
+    outline: 2px solid var(--accent-color);
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+.submit-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.submit-btn-container .btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.75em;
+    font-size: 1.1em;
+    text-align: center;
+    border-radius: 0.5em; /* Ensure button has rounded corners */
+    background-color: var(--primary-color); /* Match button background color */
+    color: #fff; /* Ensure button text is readable */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+.submit-btn-container .btn:hover {
+    background-color: var(--accent-color); /* Change button color on hover */
+}
+
+
+/* Games Opening Screen */
+.header {
+    margin-top: 0px;
+    text-align: center;
+    font-size: 5em;
+    margin-bottom: 0.5em;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    margin: 0 auto;
+    padding: 0 1em;
+    margin-bottom: 3em;
+}
+
+.box {
+    border: 3px solid rgb(49, 49, 49);
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    object-fit: cover;
+    padding: 3em;
+    gap: 2em;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.box:hover {
+    border: 3px solid rgb(100, 100, 100);
+}
+
+.box p {
+    opacity: 0.8;
+}
+
+.box h1 {
+    font-size: 2em;
+}
+
+.box img {
+    min-width: 25px;
+    border-radius: 0.5em;
+}
+
+/* Footer Styles */
+footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    padding: 2em 5%;
+    color: white;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.col-left, .col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.col-box {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.col-box:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.col-box span:first-child {
+    font-size: 1.5em;
+    color: #f0f0f0;
+}
+
+.col-box span:last-child {
+    font-size: 1em;
+    color: #d0d0d0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1em;
+}
+
+.social-icons span {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons span:hover {
+    color: #ff9b00;
+    transform: scale(1.1);
+}
+
+.col-right p {
+    line-height: 1.5;
+    font-size: 0.9em;
+    color: #d0d0d0;
+    margin-top: 0.5em;
+}
+/* Play Button in Games Section */
+.play-btn {
+    padding: 0.75em;
+    width: 100%;
+    border-radius: 0.5em;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.play-btn:hover {
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.play-btn:focus {
+    outline: none;
+    border-color: white;
+}
+
+/*Login screen*/
+.about-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.input-box label {
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+
+.input-box input {
+    padding: 0.75em 1em;
+    font-size: 1em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: var(--input-background);
+    color: #333;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.input-box input:focus {
+    background-color: #fff;
+    outline: 2px solid var(--accent-color);
+}
+
+.forgot-password {
+    text-align: right;
+    justify-content: right;
+    margin-top: -0.5em;
+}
+
+.forgot-password a {
+    font-size: 1em;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.forgot-password a:hover {
+    color: #ffa733;
+}
+
+.submit-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.submit-btn-container .btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.75em;
+    border-radius: 0.5em;
+    font-size: 1em;
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    color: black;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    text-align: center;
+}
+.submit-btn-container .btn:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Constitutional Scenario Cards Styles */
+#game {
+    padding: 2rem;
+    text-align: center;
+}
+
+#card-container {
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.card {
+    background: var(--second-background);
+    border-radius: 0.5em;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: var(--primary-color);
+}
+
+#response {
+    margin-top: 2rem;
+}
+
+textarea#response-text {
+    width: 100%;
+    height: 100px;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5em;
+    border: 1px solid var(--primary-color);
+    background-color: var(--input-background);
+    color: black; /* Changed text color to black */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5em;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--background);
+    color: var(--accent-color);
+}
+
+footer {
+    background: var(--second-background);
+}
+
+/* True/False Game Styles */
+#game {
+    padding: 2em;
+    text-align: center;
+}
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.card {
+    background: var(--second-background);
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--primary-color);
+    margin: 2em auto;
+    text-align: center;
+}
+.card h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+.card button {
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 0.5em;
+    color: var(--primary-color);
+    background-color: var(--accent-color);
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin: 0.5em;
+}
+.card button:hover {
+    background-color: #e68a00;
+}
+#result {
+    font-size: 1.2em;
+    margin-top: 1em;
+}

@@ -1,0 +1,137 @@
+/* Wheel Page Specific Styles */
+
+/* Wheel Section */
+.wheel-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4em 0;
+    background-color: var(--second-background);
+    min-height: calc(100vh - 6em); /* Adjusting for header height */
+}
+
+.wheel-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+#wheelcanvas {
+    border: 5px solid #fff;
+    border-radius: 50%;
+    background-color: transparent; /* Remove or set to a visible color if needed */
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    background-image: radial-gradient(circle, rgba(255,255,255,0.15) 10%, transparent 10%), 
+                      radial-gradient(circle, transparent 10%, rgba(255,255,255,0.15) 10%);
+    background-size: 10px 10px;
+    background-position: 0 0, 5px 5px;
+}
+
+#spin-button {
+    padding: 0.75em 2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--background);
+    background-color: #fff;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#spin-button:hover {
+    background-color: #ddd;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal {
+    background-color: var(--background);
+    padding: 2em;
+    border-radius: 0.5em;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.modal h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #fff;
+}
+
+.modal p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    color: #ddd;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 1.5em;
+}
+
+.option-button {
+    padding: 0.75em;
+    background-color: var(--second-background);
+    border: 2px solid #fff;
+    border-radius: 0.5em;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.option-button:hover {
+    background-color: #fff;
+    color: var(--background);
+    border-color: #fff;
+}
+
+#close-modal {
+    padding: 0.5em 1.5em;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 0.5em;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#close-modal:hover {
+    background-color: #e60000;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .modal h2 {
+        font-size: 1.5em;
+    }
+
+    .modal p {
+        font-size: 1em;
+    }
+
+    #spin-button {
+        font-size: 1em;
+    }
+}
